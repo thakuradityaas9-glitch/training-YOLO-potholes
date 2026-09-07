@@ -1,13 +1,15 @@
 from ultralytics import YOLO
 
-# Load YOLO11 nano pretrained model
-model = YOLO("yolo11n.pt")
+model = YOLO("yolo11s.pt")
 
-# Train on our road-damage dataset
 model.train(
     data="data.yaml",
-    epochs=50,
+    epochs=100,
     imgsz=640,
-    batch=16,
-    device=0
+    batch=-1,
+    device=0,
+    patience=20,
+    workers=8,
+    project="runs/model_a",
+    name="yolo11s_pavement_damage"
 )
