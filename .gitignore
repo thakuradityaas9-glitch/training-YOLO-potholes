@@ -6,3 +6,5 @@ runs/
 *.pt
 
 dataset/
+dataset_model_a/
+visualized_model_a/
